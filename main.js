@@ -59,7 +59,7 @@ function meatMove() {
 }
 
 function meetCheck() {
-  if (meatLinePosition > screen.length - 2) {
+  if (meatLinePosition === screen.length - 1) {
     if (meatPosition === playerPosition) {
       console.log('You win!');
     } else {
