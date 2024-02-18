@@ -13,7 +13,7 @@ function createScreen(rows, columns) {
   for (let y = 0; y < rows; y++) {
     const row = [];
     for (let x = 0; x < columns; x++) {
-      row.push('|'); // Initialize all cells with a pipe symbol
+      row.push('︙'); // Initialize all cells with a pipe symbol
     }
     screen.push(row);
   }
@@ -47,7 +47,7 @@ function move(row, col, icon) {
 
 // Function to handle player movement
 function playerMove(key) {
-  move(screen.length - 1, playerPosition, '|'); // Display a pipe where the player was
+  move(screen.length - 1, playerPosition, '︙'); // Display a pipe where the player was
   if (key.name === 'left') {
     if (playerPosition > 0) {
       playerPosition -= 1; // Move the player left within the valid range
@@ -58,14 +58,14 @@ function playerMove(key) {
       playerPosition += 1; // Move the player right within the valid range
     }
   }
-  move(screen.length - 1, playerPosition, 'P'); // Display 'P' at the new player position
+  move(screen.length - 1, playerPosition, '🙌'); // Display 'P' at the new player position
 }
 
 // Function to handle meat movement
 function meatMove() {
-  move(meatLinePosition - 1, meatPosition, '|'); // Display a pipe where the meat was
+  move(meatLinePosition - 1, meatPosition, '︙'); // Display a pipe where the meat was
   if (meatLinePosition < screen.length) {
-    move(meatLinePosition, meatPosition, '@'); // Display meat at the new position
+    move(meatLinePosition, meatPosition, '🥩'); // Display meat at the new position
   }
 }
 
@@ -97,6 +97,6 @@ function update(ch, key) {
 process.stdin.on('keypress', update);
 
 // Set initial configurations and draw the screen
-move(meatLinePosition, meatPosition, '@'); // Display initial meat position
-move(screen.length - 1, playerPosition, 'P'); // Display initial player position
+move(meatLinePosition, meatPosition, '🥩'); // Display initial meat position
+move(screen.length - 1, playerPosition, '🙌'); // Display initial player position
 drawScreen(); // Draw the screen
