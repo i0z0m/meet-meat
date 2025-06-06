@@ -6,3 +6,4 @@ Welcome to the Catch the Falling Meat game! This is a simple command-line game w
 npm install
 node main.js
 ```
+![スクリーンショット 2025-06-06 141612](https://github.com/user-attachments/assets/7670e9e2-a9ab-4e76-9470-2470c6bae1a8)
